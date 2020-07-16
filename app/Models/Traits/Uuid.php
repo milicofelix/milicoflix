@@ -6,7 +6,7 @@
  * Time: 01:04
  */
 
-namespace App\Model\Traits;
+namespace App\Models\Traits;
 
 use \Ramsey\Uuid\Uuid as RamseyUuid;
 

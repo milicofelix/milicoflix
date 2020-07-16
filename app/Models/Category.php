@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-use App\Model\Traits\Uuid;
+use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
