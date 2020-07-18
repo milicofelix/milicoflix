@@ -20,9 +20,8 @@ class CategoryTest extends TestCase
 
     public function testFillable()
     {
-        $category = new Category();
         $fillable = ['name','description','is_active'];
-        $this->assertEquals($fillable, $category->getFillable());
+        $this->assertEquals($fillable, $this->category->getFillable());
     }
 
     public function testIfUseTraits()
@@ -44,8 +43,7 @@ class CategoryTest extends TestCase
 
     public function testIncrementingAttributes()
     {
-        $category = new Category();
-        $this->assertFalse($category->incrementing);
+        $this->assertFalse($this->category->incrementing);
     }
 
     public function testDatesAttributes()
