@@ -20,9 +20,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, $this->rules);
-        Category::create($request->all());
-
-        return response()->json([], 200);
+        $category = Category::create($request->all());
+        $category->refresh();
+        return $category;
+        //return response()->json([], 201);
     }
 
     public function show(Category $category)
@@ -34,7 +35,10 @@ class CategoryController extends Controller
     {
         $this->validate($request, $this->rules);
         $category->update($request->all());
-        return response()->json(['category' => $category], 200);
+
+        return $category;
+
+        //return response()->json(['category' => $category], 200);
     }
 
     public function destroy(Category $category)

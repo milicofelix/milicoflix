@@ -2,7 +2,7 @@
   'app' => 
   array (
     'name' => 'Laravel',
-    'env' => 'local',
+    'env' => 'testing',
     'debug' => true,
     'url' => 'http://localhost',
     'asset_url' => NULL,
@@ -153,7 +153,7 @@
   ),
   'cache' => 
   array (
-    'default' => 'file',
+    'default' => 'array',
     'stores' => 
     array (
       'apc' => 
@@ -223,7 +223,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'milicoflix_micro_videos',
+        'database' => 'milicoflix_micro_videos_test',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -233,7 +233,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'milicoflix_micro_videos',
+        'database' => 'milicoflix_micro_videos_test',
         'username' => 'root',
         'password' => 'morango123',
         'unix_socket' => '',
@@ -253,7 +253,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'milicoflix_micro_videos',
+        'database' => 'milicoflix_micro_videos_test',
         'username' => 'root',
         'password' => 'morango123',
         'charset' => 'utf8',
@@ -268,7 +268,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'milicoflix_micro_videos',
+        'database' => 'milicoflix_micro_videos_test',
         'username' => 'root',
         'password' => 'morango123',
         'charset' => 'utf8',
@@ -337,7 +337,7 @@
     'driver' => 'bcrypt',
     'bcrypt' => 
     array (
-      'rounds' => 10,
+      'rounds' => '4',
     ),
     'argon' => 
     array (
@@ -416,7 +416,7 @@
   ),
   'mail' => 
   array (
-    'driver' => 'smtp',
+    'driver' => 'array',
     'host' => 'smtp.mailtrap.io',
     'port' => '2525',
     'from' => 
@@ -508,7 +508,7 @@
   ),
   'session' => 
   array (
-    'driver' => 'file',
+    'driver' => 'array',
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
@@ -548,17 +548,22 @@
       'anonymize_ips' => true,
       'collect_git_information' => true,
       'report_queries' => true,
+      'maximum_number_of_collected_queries' => 200,
       'report_query_bindings' => true,
       'report_view_data' => true,
+      'grouping_type' => NULL,
     ),
+    'send_logs_as_events' => true,
   ),
   'ignition' => 
   array (
     'editor' => 'phpstorm',
     'theme' => 'light',
     'enable_share_button' => true,
+    'register_commands' => false,
     'ignored_solution_providers' => 
     array (
+      0 => 'Facade\\Ignition\\SolutionProviders\\MissingPackageSolutionProvider',
     ),
     'enable_runnable_solutions' => NULL,
     'remote_sites_path' => '',
