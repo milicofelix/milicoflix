@@ -21,8 +21,11 @@ class GenreController extends Controller
     {
         $this->validate($request, $this->rules);
         $genre = Genre::create($request->all());
+        $genre->refresh();
 
-        return response()->json(['genre' => $genre], 201);
+        return $genre;
+
+//        return response()->json(['genre' => $genre], 201);
     }
 
     public function show(Genre $genre)
@@ -35,7 +38,8 @@ class GenreController extends Controller
         $this->validate($request, $this->rules);
         $genre->update($request->all());
 
-        return response()->json(['genre' => $genre], 200);
+        return $genre;
+        //return response()->json(['genre' => $genre], 200);
     }
 
     public function destroy(Genre $genre)
